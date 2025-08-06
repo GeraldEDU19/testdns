@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Página de Ejemplo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4CAF50;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>¡Bienvenido a mi Página de Ejemplo!</h1>
+        <p>Esta es una página HTML simple con algunos elementos básicos.</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Acerca de esta página</h2>
+            <p>Esta es una página de ejemplo que incluye:</p>
+            <ul>
+                <li>Un encabezado con estilo</li>
+                <li>Texto y párrafos</li>
+                <li>Una lista con elementos</li>
+                <li>Botones interactivos</li>
+                <li>CSS básico para el diseño</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Información de contacto</h2>
+            <p>Si tienes alguna pregunta, no dudes en contactarnos:</p>
+            <p><strong>Email:</strong> ejemplo@correo.com</p>
+            <p><strong>Teléfono:</strong> +1 234 567 890</p>
+        </section>
+
+        <section class="card">
+            <h2>Acciones</h2>
+            <p>Puedes realizar las siguientes acciones:</p>
+            <button class="button" onclick="alert('¡Hola desde JavaScript!')">Hacer clic aquí</button>
+            <a href="#" class="button" onclick="changeColor()">Cambiar color</a>
+        </section>
+    </main>
+
+    <footer style="text-align: center; margin-top: 40px; color: #666;">
+        <p>&copy; 2025 Página de Ejemplo. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function changeColor() {
+            const colors = ['#4CAF50', '#2196F3', '#FF9800', '#9C27B0', '#F44336'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.querySelector('header').style.backgroundColor = randomColor;
+            
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                button.style.backgroundColor = randomColor;
+            });
+            
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.borderLeftColor = randomColor;
+            });
+        }
+    </script>
+</body>
+</html>
